@@ -1,0 +1,5 @@
+#build container image, set tag c3-web
+docker build -t=c3-web .
+
+#provide user name as env variable to docker container; map host and container ports
+docker run -p 8089:8080 -p 8022:22  -e USER_NAME=jingerbread c3-web:latest
